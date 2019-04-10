@@ -3,7 +3,7 @@ import '../components/style.scss';
 
 function About() {
   return (
-    <h1>
+    <h1 className="about__title">
       About <Cualquiera />
     </h1>
   );
