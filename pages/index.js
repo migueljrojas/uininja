@@ -1,4 +1,8 @@
-import React, { Component } from 'react';
+import React from 'react';
+import UIPage from '../components/layout/page';
+// Stylesheets
+import '../static/styles/pages/home.scss';
+import '../static/styles/pages/about.scss';
 
 class Home extends React.Component {
   constructor() {
@@ -21,9 +25,10 @@ class Home extends React.Component {
     const { name } = this.state;
 
     return (
-      <div>
-        <h1>Hello {name}</h1>
+      <UIPage lang="eng">
+        <h1 className="home__title">Hello {name}</h1>
         <button
+          className="about__button"
           onClick={() => {
             this.changeName('Miguel');
           }}
@@ -31,7 +36,7 @@ class Home extends React.Component {
         >
           Cambiar Nombre
         </button>
-      </div>
+      </UIPage>
     );
   }
 }
