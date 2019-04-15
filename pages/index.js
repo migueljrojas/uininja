@@ -1,8 +1,7 @@
 import React from 'react';
 import UIPage from '../components/layout/page';
-// Stylesheets
-import '../static/styles/pages/home.scss';
-import '../static/styles/pages/about.scss';
+import Hero from '../components/pages/home/hero';
+import AboutUs from '../components/pages/home/about';
 
 class Home extends React.Component {
   constructor() {
@@ -25,17 +24,9 @@ class Home extends React.Component {
     const { name } = this.state;
 
     return (
-      <UIPage lang="eng">
-        <h1 className="home__title">Hello {name}</h1>
-        <button
-          className="about__button"
-          onClick={() => {
-            this.changeName('Miguel');
-          }}
-          type="submit"
-        >
-          Cambiar Nombre
-        </button>
+      <UIPage>
+        <Hero changeName={this.changeName} name={name} />
+        <AboutUs />
       </UIPage>
     );
   }
