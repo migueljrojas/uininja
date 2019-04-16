@@ -24,7 +24,7 @@ const HeroSection = props => {
         onClick={() => {
           changeName('Miguel');
         }}
-        type="submit"
+        type="button"
       >
         Cambiar Nombre
       </Button>
