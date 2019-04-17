@@ -11,7 +11,7 @@ const Button = styled.button`
   color: #fff;
 `;
 const Title = styled.h1`
-  background: red;
+  background: ${props => props.theme.mainColor};
   color: white;
 `;
 
