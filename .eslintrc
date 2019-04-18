@@ -2,8 +2,11 @@
   "extends": ["airbnb", "prettier", "prettier/react"],
   "plugins": ["prettier"],
   "rules": {
+    "import/no-extraneous-dependencies": ["error", {"devDependencies": true}],
     "react/jsx-filename-extension": 0,
-    "react/react-in-jsx-scope": 0
+    "react/react-in-jsx-scope": 0,
+    "react/require-default-props": 0,
+    "react/forbid-prop-types": 0
   },
   "globals": {
     "window": true,
@@ -26,5 +29,10 @@
     "browser": true,
     "es6": true,
     "commonjs": true
+  },
+  "settings": {
+    "import/resolver": {
+      "babel-module": {}
+    }
   }
 }
