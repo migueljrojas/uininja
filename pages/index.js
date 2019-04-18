@@ -1,7 +1,7 @@
 import React from 'react';
-import UIPage from '../components/layout/page';
-import Hero from '../components/pages/home/hero';
-import AboutUs from '../components/pages/home/about';
+import UIPage from 'layoutComponents/page';
+import Hero from 'pageComponents/home/hero';
+import AboutUs from 'pageComponents/home/about';
 
 class Home extends React.Component {
   constructor() {

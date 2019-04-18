@@ -1,5 +1,5 @@
-import lightTheme from '../../constants/light-theme';
-import darkTheme from '../../constants/dark-theme';
+import lightTheme from 'constants/light-theme';
+import darkTheme from 'constants/dark-theme';
 
 const isDaytime = () => {
   const newDateObject = new Date();

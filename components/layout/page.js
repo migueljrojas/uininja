@@ -1,10 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { ThemeProvider } from 'styled-components';
+import getCurrentTheme from 'utils/theme-manager';
 import UIHead from './head';
 import UIHeader from './header';
 import UIFooter from './footer';
-import getCurrentTheme from '../utils/theme-manager';
 
 class UIPage extends React.Component {
   constructor(props) {
