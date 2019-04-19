@@ -4,5 +4,7 @@ export default {
   mainBackground: '#f2f2f2',
   logoFillColor: '#000',
   accentColor: '#E65443',
-  logoDividerColor: '#666'
+  logoDividerColor: '#666',
+  thumbColor: '#999',
+  trackColor: '#ccc',
 };

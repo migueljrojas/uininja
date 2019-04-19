@@ -1,5 +1,7 @@
 import React from 'react';
+import styled from 'styled-components';
 import UIPage from 'layoutComponents/page';
+import { UIContainer } from 'components/modules/grid';
 
 // class Home extends React.Component {
 //   constructor() {
@@ -16,12 +18,20 @@ import UIPage from 'layoutComponents/page';
 //   }
 // }
 
-const Home = () => {
-  return (
-    <UIPage>
-      <h1>Home</h1>
-    </UIPage>
-  );
-};
+const Title = styled.h1`
+  margin: 0;
+`;
+
+const StyledUIContainer = styled(UIContainer)`
+  padding-top: 70px;
+`;
+
+const Home = () => (
+  <UIPage>
+    <StyledUIContainer>
+      <Title>Home</Title>
+    </StyledUIContainer>
+  </UIPage>
+);
 
 export default Home;

@@ -10,13 +10,13 @@
   "pre-commit": "lint-staged",
   "lint-staged": {
     "*.js": [
-      "pretty-quick --staged",
       "eslint --fix",
       "git add"
     ]
   },
   "dependencies": {
     "@zeit/next-sass": "^1.0.1",
+    "gulp": "^4.0.0",
     "next": "^8.0.4",
     "node-sass": "^4.11.0",
     "prop-types": "^15.7.2",

@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import styled, { ThemeProvider } from 'styled-components';
 import setActiveTheme from 'utils/theme-manager';
 import UIHead from './head';
-import UIHeader from './header';
+import UIHeader from './header/header';
 import UIFooter from './footer';
 
 const Wrapper = styled.div`
@@ -11,6 +11,7 @@ const Wrapper = styled.div`
   font-family: ${props => props.theme.fontFamily};
   background: ${props => props.theme.mainBackground};
   min-height: 100vh;
+  max-width: 100%;
 `;
 
 class UIPage extends React.Component {
@@ -19,7 +20,7 @@ class UIPage extends React.Component {
 
     this.state = {
       theme: {},
-      currentThemeId: null
+      currentThemeId: null,
     };
 
     this.switchTheme = this.switchTheme.bind(this);
@@ -33,7 +34,7 @@ class UIPage extends React.Component {
 
       this.setState({
         theme: currentTheme,
-        currentThemeId: currentTheme.themeId
+        currentThemeId: currentTheme.themeId,
       });
     }
   }
@@ -45,15 +46,13 @@ class UIPage extends React.Component {
 
     this.setState({
       theme: newTheme,
-      currentThemeId: newThemeId
+      currentThemeId: newThemeId,
     });
   }
 
   render() {
     const { children } = this.props;
-    const { theme, currentThemeId } = this.state;
-
-    console.log('currentThemeId', currentThemeId);
+    const { theme } = this.state;
 
     return (
       <ThemeProvider theme={theme}>
@@ -69,7 +68,7 @@ class UIPage extends React.Component {
 }
 
 UIPage.propTypes = {
-  children: PropTypes.any
+  children: PropTypes.any,
 };
 
 export default UIPage;
