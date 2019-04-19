@@ -1,3 +1,3 @@
 export default {
-  fontFamily: "'Raleway', sans-serif"
+  fontFamily: "'Montserrat', sans-serif",
 };

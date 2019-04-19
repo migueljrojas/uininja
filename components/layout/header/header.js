@@ -1,7 +1,8 @@
 import PropTypes from 'prop-types';
-import { Logo, LogoOutline } from 'components/modules/logo';
+import { Logo, LogoOutline } from 'modules/logo';
 import styled, { keyframes } from 'styled-components';
 import Link from 'next/link';
+import { getFromTheme } from 'utils/theme-manager';
 import Menu from './headerMenu';
 import ThemeSwitcher from './themeSwitcher';
 
@@ -21,7 +22,6 @@ const fadeOut = keyframes`
   }
 `;
 
-
 const LogoWrapper = styled.div`
   position: relative;
   height: 100%;
@@ -33,17 +33,17 @@ const StyledLogo = styled(Logo)`
   height: 100%;
   opacity: 0;
   animation: ${fadeIn} 1s 1s linear forwards;
-  fill: ${props => props.theme.logoFillColor};
+  fill: ${getFromTheme('logo.fillColor')};
   transition: all 0.3s ease;
 
   .--red-fill {
-    fill: ${props => props.theme.accentColor};
-    transition: ${props => props.theme.transition};
+    fill: ${getFromTheme('common.accentColor')};
+    transition: ${getFromTheme('transition')};
   }
 
   ._line {
-    stroke: ${props => props.theme.logoDividerColor};
-    transition: ${props => props.theme.transition};
+    stroke: ${getFromTheme('logo.dividerColor')};
+    transition: ${getFromTheme('transition')};
   }
 `;
 
@@ -56,10 +56,10 @@ const StyledLogoOutline = styled(LogoOutline)`
   stroke-dasharray: 600;
   stroke-dashoffset: 600;
   animation: ${dash} 1s linear forwards, ${fadeOut} 1s 0.5s linear forwards;
-  transition: ${props => props.theme.transition};
+  transition: ${getFromTheme('transition')};
 
   ._path {
-    stroke: ${props => props.theme.logoFillColor};
+    stroke: ${getFromTheme('logo.fillColor')};
   }
 `;
 
@@ -73,7 +73,6 @@ const Header = styled.header`
   display: flex;
   align-items: center;
   justify-content: space-between;
-
 `;
 
 const NavWrapper = styled.div`

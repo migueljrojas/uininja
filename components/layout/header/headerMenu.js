@@ -1,7 +1,8 @@
 import Link from 'next/link';
 import styled from 'styled-components';
+import { getFromTheme } from 'utils/theme-manager';
 
-const StyledMenu = styled.ul`
+const Menu = styled.ul`
   margin: 0;
   padding: 0;
   display: flex;
@@ -13,10 +14,24 @@ const MenuItem = styled.li`
   &:not(first-child) {
     margin-left: 20px;
   }
+
+  a {
+    color: ${getFromTheme('common.link')};
+    transition: ${getFromTheme('transition')};
+    text-decoration: none;
+    font-size: 14px;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 0.7px;
+
+    &:hover {
+      color: ${getFromTheme('common.linkHover')};
+    }
+  }
 `;
 
-const Menu = () => (
-  <StyledMenu>
+const MenuComponent = () => (
+  <Menu>
     <MenuItem>
       <Link
         as="/who-we-are"
@@ -33,7 +48,7 @@ const Menu = () => (
         <a>Contact Us</a>
       </Link>
     </MenuItem>
-  </StyledMenu>
+  </Menu>
 );
 
-export default Menu;
+export default MenuComponent;

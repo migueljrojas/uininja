@@ -1,15 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled, { ThemeProvider } from 'styled-components';
-import setActiveTheme from 'utils/theme-manager';
+import setActiveTheme, { getFromTheme } from 'utils/theme-manager';
 import UIHead from './head';
 import UIHeader from './header/header';
 import UIFooter from './footer';
 
 const Wrapper = styled.div`
   transition: all 0.3s ease;
-  font-family: ${props => props.theme.fontFamily};
-  background: ${props => props.theme.mainBackground};
+  font-family: ${getFromTheme('fontFamily')};
+  background: ${getFromTheme('common.mainBackground')};
   min-height: 100vh;
   max-width: 100%;
 `;

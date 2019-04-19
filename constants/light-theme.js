@@ -1,10 +1,18 @@
 export default {
-  themeId: 'light',
-  mainColor: '#09f',
-  mainBackground: '#f2f2f2',
-  logoFillColor: '#000',
-  accentColor: '#E65443',
-  logoDividerColor: '#666',
-  thumbColor: '#999',
-  trackColor: '#ccc',
+  themeId: 'dark',
+  common: {
+    mainBackground: '#f2f2f2',
+    accentColor: '#E65443',
+    link: '#333',
+    linkHover: '#E65443',
+  },
+  logo: {
+    fillColor: '#000',
+    dividerColor: '#666',
+  },
+  themeSwitcher: {
+    thumbColor: '#999',
+    trackColor: '#ccc',
+    thumbPosition: 'translate3d(0, -50%, 0)',
+  },
 };

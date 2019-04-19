@@ -4,8 +4,8 @@ import { createGlobalStyle } from 'styled-components';
 
 const GlobalStyles = createGlobalStyle`
   body {
-    @import url('https://fonts.googleapis.com/css?family=Raleway:100,100i,300,300i,500,500i,700,700i,900,900i');
-    font-family: 'Arial', sans-serif;
+    @import url('https://fonts.googleapis.com/css?family=Montserrat:100,100i,300,300i,500,500i,700,700i,900,900i');
+    font-family: 'Montserrat', sans-serif;
     padding: 0;
     margin: 0;
   }

@@ -1,5 +1,7 @@
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
+import { getFromTheme } from 'utils/theme-manager';
+import { SunIcon, MoonIcon } from 'modules/icons';
 
 const Wrapper = styled.div`
   display: flex;
@@ -11,20 +13,23 @@ const SwitchButton = styled.button`
   background: none;
   
   &:focus,
-  &:active,
-  &:hover {
+  &:active {
     outline: none;
     box-shadow: none;
+  }
+
+  &:hover {
+    cursor: pointer;
   }
 `;
 
 const Track = styled.div`
   width: 30px;
   height: 14px;
-  background: ${props => props.theme.trackColor};
+  background: ${getFromTheme('themeSwitcher.trackColor')};
   position: relative;
   border-radius: 99px;
-  transition: ${props => props.theme.transition};
+  transition: ${getFromTheme('transition')};
 `;
 
 const Thumb = styled.span`
@@ -32,12 +37,30 @@ const Thumb = styled.span`
   position: absolute;
   left: -10px;
   top: 50%;
-  transform: translate3d(0, -50%, 0);
+  transform: ${getFromTheme('themeSwitcher.thumbPosition')};
   border-radius: 50%;
   width: 20px;
   height: 20px;
-  background: ${props => props.theme.thumbColor};
-  transition: ${props => props.theme.transition};
+  background: ${getFromTheme('themeSwitcher.thumbColor')};
+  transition: ${getFromTheme('transition')};
+`;
+
+const Icon = `
+  fill: #999;
+`;
+
+const StyledSunIcon = styled(SunIcon)`
+  ${Icon}
+  width: 22px;
+  height: 22px;
+  margin-right: 10px;
+`;
+
+const StyledMoonIcon = styled(MoonIcon)`
+  ${Icon}
+  width: 18px;
+  height: 18px;
+  margin-left: 10px;
 `;
 
 const ThemeSwitcher = (props) => {
@@ -45,7 +68,7 @@ const ThemeSwitcher = (props) => {
 
   return (
     <Wrapper>
-      <i />
+      <StyledSunIcon />
       <SwitchButton
         onClick={() => switchTheme()}
         type="button"
@@ -54,7 +77,7 @@ const ThemeSwitcher = (props) => {
           <Thumb />
         </Track>
       </SwitchButton>
-      <i />
+      <StyledMoonIcon />
     </Wrapper>
   );
 };

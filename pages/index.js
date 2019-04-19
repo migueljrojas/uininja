@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import UIPage from 'layoutComponents/page';
-import { UIContainer } from 'components/modules/grid';
+import { UIContainer } from 'modules/grid';
 
 // class Home extends React.Component {
 //   constructor() {

@@ -9,6 +9,7 @@
         "layoutComponents": "./components/layout",
         "pageComponents": "./components/pages",
         "utils": "./components/utils",
+        "modules": "./components/modules",
         "constants": "./constants",
         "pages": "./pages"
       }

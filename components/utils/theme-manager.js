@@ -11,7 +11,7 @@ const isDaytime = () => {
 
 const initTheme = () => (isDaytime() ? lightTheme : darkTheme);
 
-const setTheme = theme => {
+const setTheme = (theme) => {
   if (theme) {
     return theme === 'light' ? lightTheme : darkTheme;
   }
@@ -19,7 +19,17 @@ const setTheme = theme => {
   return initTheme();
 };
 
-export default theme => {
+export const getFromTheme = (valueInTheme) => {
+  const values = valueInTheme.split('.');
+
+  if (values.length > 1) {
+    return props => props.theme[values[0]][values[1]];
+  }
+
+  return props => props.theme[values[0]];
+};
+
+export default (theme) => {
   const currentTheme = setTheme(theme);
 
   return { ...currentTheme, ...baseTheme };
