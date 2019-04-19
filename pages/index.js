@@ -1,35 +1,37 @@
 import React from 'react';
+import styled from 'styled-components';
 import UIPage from 'layoutComponents/page';
-import Hero from 'pageComponents/home/hero';
-import AboutUs from 'pageComponents/home/about';
+import { UIContainer } from 'modules/grid';
 
-class Home extends React.Component {
-  constructor() {
-    super();
+// class Home extends React.Component {
+//   constructor() {
+//     super();
+//   }
 
-    this.state = {
-      name: 'Cesar'
-    };
+//   render() {
 
-    this.changeName = this.changeName.bind(this);
-  }
+//     return (
+//       <UIPage>
+//         <h1>Home</h1>
+//       </UIPage>
+//     );
+//   }
+// }
 
-  changeName(name) {
-    this.setState({
-      name
-    });
-  }
+const Title = styled.h1`
+  margin: 0;
+`;
 
-  render() {
-    const { name } = this.state;
+const StyledUIContainer = styled(UIContainer)`
+  padding-top: 70px;
+`;
 
-    return (
-      <UIPage>
-        <Hero changeName={this.changeName} name={name} />
-        <AboutUs />
-      </UIPage>
-    );
-  }
-}
+const Home = () => (
+  <UIPage>
+    <StyledUIContainer>
+      <Title>Home</Title>
+    </StyledUIContainer>
+  </UIPage>
+);
 
 export default Home;

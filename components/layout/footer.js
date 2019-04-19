@@ -1,7 +1,11 @@
 const UIFooter = () => {
+  const currentYear = Object.assign(new Date()).getFullYear();
+
   return (
     <footer>
-      <div>Footer</div>
+      <div>
+        {'\u00A9'} Copyright {currentYear}. All rights reserved.
+      </div>
     </footer>
   );
 };

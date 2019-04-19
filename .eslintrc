@@ -1,12 +1,18 @@
 {
-  "extends": ["airbnb", "prettier", "prettier/react"],
-  "plugins": ["prettier"],
+  "extends": ["airbnb"],
   "rules": {
     "import/no-extraneous-dependencies": ["error", {"devDependencies": true}],
     "react/jsx-filename-extension": 0,
     "react/react-in-jsx-scope": 0,
     "react/require-default-props": 0,
-    "react/forbid-prop-types": 0
+    "react/forbid-prop-types": 0,
+    "react/jsx-sort-props": 2,
+    "react/jsx-max-props-per-line": [2, { "maximum": 1, "when": "always" }],
+    "jsx-a11y/anchor-is-valid": [ "error", {
+      "components": [ "Link" ],
+      "specialLink": [ "hrefLeft", "hrefRight" ],
+      "aspects": [ "invalidHref", "preferButton" ]
+    }]
   },
   "globals": {
     "window": true,
