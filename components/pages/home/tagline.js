@@ -22,37 +22,65 @@ const Tagline = styled.h1`
   }
 `;
 
-const randomString = slogans[Math.floor(Math.random() * slogans.length)];
-
 class TaglineComponent extends React.Component {
   constructor() {
     super();
 
     this.state = {
-      randomLine: '',
+      randomLine: [],
+      currentSloganIndex: 0,
     };
 
     this.randomizeStringCharacters = this.randomizeStringCharacters.bind(this);
   }
 
   componentDidMount() {
-    this.randomizeStringCharacters(randomString);
+    const { currentSloganIndex } = this.state;
+    const currentSlogan = slogans[currentSloganIndex];
+    this.randomizeStringCharacters(currentSlogan);
   }
+
+  componentDidUpdate() {
+    const { randomLine, currentSloganIndex } = this.state;
+
+    if (slogans[currentSloganIndex] === randomLine.join('')) {
+      setTimeout(() => {
+        const newSloganIndex = currentSloganIndex < 2 ? currentSloganIndex + 1 : 0;
+        const newSlogan = slogans[newSloganIndex];
+
+        this.randomizeStringCharacters(newSlogan);
+      }, 2000);
+    }
+  }
+
+  // randomSlogan = () => slogans[Math.floor(Math.random() * slogans.length)];
+
+  generateRandomLetter = () => Math.random().toString(36).replace(/[^a-z]+/g, '').substr(0, 1);
 
   randomizeStringCharacters(string) {
     const stringArray = string.split('');
+    const newString = [];
+    const { currentSloganIndex } = this.state;
 
-    const dinamycallyOrderedString = stringArray.map((letter) => {
-      const generateRandomLetter = setInterval(() => Math.random().toString(36).replace(/[^a-z]+/g, '').substr(0, 1), 50);
+    if (slogans[currentSloganIndex] !== string) {
+      const newSloganIndex = currentSloganIndex < 2 ? currentSloganIndex + 1 : 0;
+      this.setState({ currentSloganIndex: newSloganIndex });
+    }
 
-      if (generateRandomLetter === letter) {
-        clearInterval(generateRandomLetter);
-      }
+    stringArray.forEach((letter, index) => {
+      const randomizeLetters = setInterval(() => {
+        const newLetter = this.generateRandomLetter();
 
-      return generateRandomLetter;
+        if (letter !== newLetter) {
+          newString[index] = newLetter;
+        } else {
+          newString[index] = letter;
+          clearInterval(randomizeLetters);
+        }
+
+        this.setState({ randomLine: newString });
+      }, 50);
     });
-
-    this.setState({ randomLine: dinamycallyOrderedString.join('') });
   }
 
   render() {
@@ -62,7 +90,7 @@ class TaglineComponent extends React.Component {
       <Tagline>
         {'We do web '}
         <span>
-          {randomLine}
+          {randomLine.join('')}
         </span>
       </Tagline>
     );
