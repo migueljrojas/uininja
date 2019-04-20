@@ -5,6 +5,7 @@ export default {
     accentColor: '#FF5A4D',
     link: '#ccc',
     linkHover: '#FF5A4D',
+    textColor: '#fff',
   },
   logo: {
     fillColor: '#fff',
@@ -14,5 +15,8 @@ export default {
     thumbColor: '#999',
     trackColor: '#666',
     thumbPosition: 'translate3d(30px, -50%, 0)',
+  },
+  home: {
+    imageOpacity: '.05',
   },
 };
