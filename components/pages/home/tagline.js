@@ -23,6 +23,8 @@ const Tagline = styled.h1`
   }
 `;
 
+const intervals = [];
+
 class TaglineComponent extends React.Component {
   constructor() {
     super();
@@ -54,9 +56,9 @@ class TaglineComponent extends React.Component {
     }
   }
 
-  // componentWillUnmount() {
-  //   clearInterval(randomizeLetters);
-  // }
+  componentWillUnmount() {
+    intervals.forEach(index => clearInterval(index));
+  }
 
   // randomSlogan = () => slogans[Math.floor(Math.random() * slogans.length)];
 
@@ -85,6 +87,8 @@ class TaglineComponent extends React.Component {
 
         this.setState({ randomLine: newString });
       }, 50);
+
+      intervals.push(randomizeLetters);
     });
   }
 

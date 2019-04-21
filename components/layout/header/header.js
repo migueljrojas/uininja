@@ -26,7 +26,7 @@ const LogoWrapper = styled.div`
   position: relative;
   left: auto;
   height: 100%;
-  transform: translate3d(0,0,0) scale3d(0,0,0);
+  transform: translate3d(0,0,0) scale3d(1,1,1);
   transition: ${getFromTheme('transition')};
   transform-origin: left center;
 `;

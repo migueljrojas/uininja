@@ -1,25 +1,27 @@
+import vars from './variables';
+
 export default {
   themeId: 'dark',
   common: {
-    mainBackground: '#323234',
-    accentColor: '#FF5A4D',
-    link: '#ccc',
-    linkHover: '#FF5A4D',
-    textColor: '#fff',
+    mainBackground: vars.colors.corpBlack,
+    accentColor: vars.colors.intenseRed,
+    link: vars.colors.lightGray,
+    linkHover: vars.colors.intenseRed,
+    textColor: vars.colors.white,
   },
   logo: {
-    fillColor: '#fff',
-    dividerColor: '#999',
+    fillColor: vars.colors.white,
+    dividerColor: vars.colors.midGray,
   },
   themeSwitcher: {
-    thumbColor: '#999',
-    trackColor: '#666',
+    thumbColor: vars.colors.midGray,
+    trackColor: vars.colors.darkGray,
     thumbPosition: 'translate3d(30px, -50%, 0)',
   },
   home: {
     imageOpacity: '.05',
   },
   footer: {
-    background: '#000',
+    background: vars.colors.black,
   },
 };
