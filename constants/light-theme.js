@@ -1,5 +1,5 @@
 export default {
-  themeId: 'dark',
+  themeId: 'light',
   common: {
     mainBackground: '#f2f2f2',
     accentColor: '#E65443',
@@ -18,5 +18,8 @@ export default {
   },
   home: {
     imageOpacity: '.12',
+  },
+  footer: {
+    background: '#fff',
   },
 };

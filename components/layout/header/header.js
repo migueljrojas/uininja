@@ -24,8 +24,15 @@ const fadeOut = keyframes`
 
 const LogoWrapper = styled.div`
   position: relative;
-  height: 100%;
   left: auto;
+  height: 100%;
+  transform: translate3d(0,0,0) scale3d(0,0,0);
+  transition: ${getFromTheme('transition')};
+  transform-origin: left center;
+`;
+
+const LogoWrapperHome = styled(LogoWrapper)`
+  transform: translate3d(0, 30vh, 0) scale3d(3.3,3.3,3.3);
 `;
 
 const StyledLogo = styled(Logo)`
@@ -34,7 +41,7 @@ const StyledLogo = styled(Logo)`
   opacity: 0;
   animation: ${fadeIn} 1s 1s linear forwards;
   fill: ${getFromTheme('logo.fillColor')};
-  transition: all 0.3s ease;
+  transition: ${getFromTheme('transition')};
 
   .--red-fill {
     fill: ${getFromTheme('common.accentColor')};
@@ -78,21 +85,41 @@ const Header = styled.header`
 
 const NavWrapper = styled.div`
   display: flex;
+  justify-content: flex-end;
+  flex-grow: 2;
 `;
 
+const getLogo = (page) => {
+  const logoContent = (
+    <Link href="/index">
+      <a>
+        <StyledLogo />
+        <StyledLogoOutline />
+      </a>
+    </Link>
+  );
+
+  if (page === 'home') {
+    return (
+      <LogoWrapperHome>
+        {logoContent}
+      </LogoWrapperHome>
+    );
+  }
+
+  return (
+    <LogoWrapper>
+      {logoContent}
+    </LogoWrapper>
+  );
+};
+
 const UIHeader = (props) => {
-  const { switchTheme } = props;
+  const { switchTheme, page } = props;
 
   return (
     <Header>
-      <LogoWrapper>
-        <Link href="/index">
-          <a>
-            <StyledLogo />
-            <StyledLogoOutline />
-          </a>
-        </Link>
-      </LogoWrapper>
+      { getLogo(page) }
       <NavWrapper>
         <nav>
           <Menu />
@@ -105,6 +132,7 @@ const UIHeader = (props) => {
 
 UIHeader.propTypes = {
   switchTheme: PropTypes.func,
+  page: PropTypes.string,
 };
 
 export default UIHeader;

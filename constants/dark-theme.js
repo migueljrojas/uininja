@@ -19,4 +19,7 @@ export default {
   home: {
     imageOpacity: '.05',
   },
+  footer: {
+    background: '#000',
+  },
 };

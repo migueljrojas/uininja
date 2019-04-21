@@ -25,7 +25,7 @@ const StyledUIContainer = styled(UIContainer)`
 `;
 
 const Home = () => (
-  <UIPage>
+  <UIPage page="home">
     <StyledUIContainer>
       <ImageOverlay />
       <Tagline />

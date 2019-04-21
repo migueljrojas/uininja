@@ -9,6 +9,7 @@ const slogans = [
 ];
 
 const Tagline = styled.h1`
+  transition: ${getFromTheme('transition')};
   color: ${getFromTheme('common.textColor')};
   text-transform: uppercase;
   font-size: 5vmax;
@@ -52,6 +53,10 @@ class TaglineComponent extends React.Component {
       }, 2000);
     }
   }
+
+  // componentWillUnmount() {
+  //   clearInterval(randomizeLetters);
+  // }
 
   // randomSlogan = () => slogans[Math.floor(Math.random() * slogans.length)];
 

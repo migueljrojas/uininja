@@ -10,8 +10,11 @@ const Wrapper = styled.div`
   transition: all 0.3s ease;
   font-family: ${getFromTheme('fontFamily')};
   background: ${getFromTheme('common.mainBackground')};
-  min-height: 100vh;
-  max-width: 100%;
+  height: 100%;
+`;
+
+const Main = styled.main`
+  min-height: 100%;
 `;
 
 class UIPage extends React.Component {
@@ -51,15 +54,18 @@ class UIPage extends React.Component {
   }
 
   render() {
-    const { children } = this.props;
+    const { children, page } = this.props;
     const { theme } = this.state;
 
     return (
       <ThemeProvider theme={theme}>
         <Wrapper>
           <UIHead title="UI Ninja - Test Title" />
-          <UIHeader switchTheme={this.switchTheme} />
-          <main>{children}</main>
+          <UIHeader
+            page={page}
+            switchTheme={this.switchTheme}
+          />
+          <Main>{children}</Main>
           <UIFooter />
         </Wrapper>
       </ThemeProvider>
@@ -69,6 +75,7 @@ class UIPage extends React.Component {
 
 UIPage.propTypes = {
   children: PropTypes.any,
+  page: PropTypes.string,
 };
 
 export default UIPage;
