@@ -2,6 +2,7 @@ import React from 'react';
 import App, { Container } from 'next/app';
 import { createGlobalStyle } from 'styled-components';
 import normalizeCss from 'constants/normalizeCss';
+import UIPage from 'layoutComponents/page';
 
 const GlobalStyles = createGlobalStyle`
   ${normalizeCss}
@@ -35,7 +36,9 @@ class MyApp extends App {
     return (
       <Container>
         <GlobalStyles />
-        <Component {...pageProps} />
+        <UIPage page={pageProps.pageName || null}>
+          <Component {...pageProps} />
+        </UIPage>
       </Container>
     );
   }
