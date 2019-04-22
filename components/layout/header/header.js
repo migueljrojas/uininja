@@ -3,6 +3,7 @@ import { Logo, LogoOutline } from 'modules/logo';
 import styled, { keyframes } from 'styled-components';
 import Link from 'next/link';
 import { getFromTheme } from 'utils/theme-manager';
+import styleModifierByProp from 'utils/styleModifier';
 import Menu from './headerMenu';
 import ThemeSwitcher from './themeSwitcher';
 
@@ -22,6 +23,10 @@ const fadeOut = keyframes`
   }
 `;
 
+const LogoWrapperModifier = `
+  transform: translate3d(0, 30vh, 0) scale3d(3.3,3.3,3.3);
+`;
+
 const LogoWrapper = styled.div`
   position: relative;
   left: auto;
@@ -29,10 +34,8 @@ const LogoWrapper = styled.div`
   transform: translate3d(0,0,0) scale3d(1,1,1);
   transition: ${getFromTheme('transition')};
   transform-origin: left center;
-`;
 
-const LogoWrapperHome = styled(LogoWrapper)`
-  transform: translate3d(0, 30vh, 0) scale3d(3.3,3.3,3.3);
+  ${styleModifierByProp('page', LogoWrapperModifier)}
 `;
 
 const StyledLogo = styled(Logo)`
@@ -89,37 +92,19 @@ const NavWrapper = styled.div`
   flex-grow: 2;
 `;
 
-const getLogo = (page) => {
-  const logoContent = (
-    <Link href="/index">
-      <a>
-        <StyledLogo />
-        <StyledLogoOutline />
-      </a>
-    </Link>
-  );
-
-  if (page === 'home') {
-    return (
-      <LogoWrapperHome>
-        {logoContent}
-      </LogoWrapperHome>
-    );
-  }
-
-  return (
-    <LogoWrapper>
-      {logoContent}
-    </LogoWrapper>
-  );
-};
-
 const UIHeader = (props) => {
   const { switchTheme, page } = props;
 
   return (
     <Header>
-      { getLogo(page) }
+      <LogoWrapper page={page}>
+        <Link href="/index">
+          <a>
+            <StyledLogo />
+            <StyledLogoOutline />
+          </a>
+        </Link>
+      </LogoWrapper>
       <NavWrapper>
         <nav>
           <Menu />

@@ -1,7 +1,9 @@
-import UIPage from 'layoutComponents/page';
+import styled from 'styled-components';
+
+const Title = styled.h1`
+  margin: 0;
+`;
 
 export default () => (
-  <UIPage>
-    <h1>About Us</h1>
-  </UIPage>
+  <Title>About Us</Title>
 );
