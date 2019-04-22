@@ -89,6 +89,11 @@ const NavWrapper = styled.div`
   flex-grow: 2;
 `;
 
+const Nav = styled.nav`
+  display: flex;
+  align-items: center;
+`;
+
 const getLogo = (page) => {
   const logoContent = (
     <Link href="/index">
@@ -121,9 +126,9 @@ const UIHeader = (props) => {
     <Header>
       { getLogo(page) }
       <NavWrapper>
-        <nav>
+        <Nav>
           <Menu />
-        </nav>
+        </Nav>
         <ThemeSwitcher switchTheme={switchTheme} />
       </NavWrapper>
     </Header>

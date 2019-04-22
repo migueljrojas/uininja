@@ -15,6 +15,7 @@ const Wrapper = styled.div`
 
 const Main = styled.main`
   min-height: 100%;
+  padding-top: 70px;
 `;
 
 class UIPage extends React.Component {

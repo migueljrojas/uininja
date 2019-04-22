@@ -21,6 +21,9 @@ export default {
   home: {
     imageOpacity: '.12',
   },
+  ourWork: {
+    title: vars.colors.red,
+  },
   footer: {
     background: vars.colors.white,
   },
