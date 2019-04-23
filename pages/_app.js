@@ -3,6 +3,7 @@ import App, { Container } from 'next/app';
 import { createGlobalStyle } from 'styled-components';
 import normalizeCss from 'constants/normalizeCss';
 import UIPage from 'layoutComponents/page';
+import Router from 'next/router';
 
 const GlobalStyles = createGlobalStyle`
   ${normalizeCss}
@@ -18,6 +19,11 @@ const GlobalStyles = createGlobalStyle`
     font-family: 'Montserrat', sans-serif;
   }
 `;
+
+Router.events.on('routeChangeStart', (url) => {
+  console.log(`Loading: ${url}`);
+});
+Router.events.on('routeChangeComplete', url => console.log(`Loaded: ${url}`));
 
 class MyApp extends App {
   static async getInitialProps({ Component, ctx }) {

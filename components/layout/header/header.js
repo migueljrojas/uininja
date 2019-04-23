@@ -98,7 +98,7 @@ const UIHeader = (props) => {
   return (
     <Header>
       <LogoWrapper page={page}>
-        <Link href="/index">
+        <Link href="/">
           <a>
             <StyledLogo />
             <StyledLogoOutline />
