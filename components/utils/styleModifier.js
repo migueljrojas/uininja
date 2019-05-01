@@ -1,6 +1,6 @@
 import { css } from 'styled-components';
 
-const styleModifierByProp = (prop, styles) => props => props[prop] && css`
+const styleModifierByProp = (rule, styles) => props => props[rule.prop] === rule.value && css`
   ${styles}
 `;
 

@@ -27,4 +27,8 @@ export default {
   footer: {
     background: vars.colors.black,
   },
+  button: {
+    shadow: '0 3px 3px rgba(0,0,0,.3)',
+    shadowPressed: '0 0 3px rgba(0,0,0,.3)',
+  },
 };

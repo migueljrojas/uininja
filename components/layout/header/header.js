@@ -35,7 +35,7 @@ const LogoWrapper = styled.div`
   transition: ${getFromTheme('transition')};
   transform-origin: left center;
 
-  ${styleModifierByProp('page', LogoWrapperModifier)}
+  ${styleModifierByProp({ prop: 'page', value: 'home' }, LogoWrapperModifier)}
 `;
 
 const StyledLogo = styled(Logo)`

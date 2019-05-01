@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { getFromTheme } from 'utils/theme-manager';
 
@@ -14,8 +15,6 @@ const Tagline = styled.h1`
   text-transform: uppercase;
   font-size: 5vmax;
   font-weight: 100;
-  position: absolute;
-  top: 55%;
   margin: 0;
 
   span {
@@ -26,8 +25,8 @@ const Tagline = styled.h1`
 const intervals = [];
 
 class TaglineComponent extends React.Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
 
     this.state = {
       randomLine: [],
@@ -94,9 +93,10 @@ class TaglineComponent extends React.Component {
 
   render() {
     const { randomLine } = this.state;
+    const { className } = this.props;
 
     return (
-      <Tagline>
+      <Tagline className={className}>
         {'We do web '}
         <span>
           {randomLine.join('')}
@@ -105,5 +105,9 @@ class TaglineComponent extends React.Component {
     );
   }
 }
+
+TaglineComponent.propTypes = {
+  className: PropTypes.string,
+};
 
 export default TaglineComponent;

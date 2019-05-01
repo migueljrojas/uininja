@@ -15,4 +15,5 @@ export default {
   duration: '0.3s',
   easing: 'cubic-bezier(.785, .135, .15, .86)',
   easingLight: 'ease',
+  baseHeight: 40,
 };
