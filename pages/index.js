@@ -31,7 +31,6 @@ class Home extends React.Component {
         <ImageOverlay />
         <StyledTagline />
         <StyledButton
-          buttonType="outline"
           size="lg"
         >
           {'Let\'s start a project!'}

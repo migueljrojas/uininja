@@ -56,7 +56,7 @@ class TaglineComponent extends React.Component {
   }
 
   componentWillUnmount() {
-    intervals.forEach(index => clearInterval(index));
+    intervals.forEach(interval => clearInterval(interval));
   }
 
   // randomSlogan = () => slogans[Math.floor(Math.random() * slogans.length)];

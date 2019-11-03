@@ -5,8 +5,6 @@ import valid from 'constants/validators';
 import styleModifierByProp from 'utils/styleModifier';
 import match from 'utils/match';
 
-const buttonSizing = props => getFromTheme(`buttonBase.size-${props.size}`);
-
 const buttonOutline = css`
   background: transparent;
   border: 2px solid ${getFromTheme('common.accentColor')};
@@ -22,8 +20,8 @@ const buttonFilled = css`
 const StyledButton = styled.button`
   border-radius: 3px;
   box-shadow: ${getFromTheme('button.shadow')};
-  height: ${props => buttonSizing(props)};
-  padding: 0 ${props => buttonSizing(props)};
+  height: ${props => getFromTheme(`buttonBase.size-${props.size}`)};
+  padding: 0 ${props => getFromTheme(`buttonBase.padding-${props.size}`)};
   display: inline-flex;
   align-items: center;
   font-size: ${props => getFromTheme(`buttonBase.font-size-${props.size}`)};
@@ -51,10 +49,10 @@ const StyledButton = styled.button`
   &:before {
     content: '';
     position: absolute;
-    width: 100%;
+    width: 105%;
     margin: auto;
     height: 0;
-    padding-bottom: 100%;
+    padding-bottom: 105%;
     left: 50%;
     top: 50%;
     transform: translate3d(-50%, -50%, 0) scale3d(0, 0, 0);
