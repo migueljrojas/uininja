@@ -9,9 +9,13 @@ const StyledUIContainer = styled(UIContainer)`
   padding-top: 70px;
 `;
 
-const StyledButton = styled(Button)`
+const StyledCustomButton = styled(Button)`
   position: absolute;
-  top: 70%;
+  top: 75%;
+
+  @media only screen and (min-width: 1200px) {
+    top: 70%;
+  }
 `;
 
 const StyledTagline = styled(Tagline)`
@@ -25,16 +29,27 @@ class Home extends React.Component {
     return { pageName };
   }
 
+  constructor() {
+    super();
+
+    this.state = {
+    };
+  }
+
+  // componentDidMount() {
+  // }
+
   render() {
     return (
       <StyledUIContainer>
         <ImageOverlay />
         <StyledTagline />
-        <StyledButton
+        <StyledCustomButton
+          href="/"
           size="lg"
         >
           {'Let\'s start a project!'}
-        </StyledButton>
+        </StyledCustomButton>
       </StyledUIContainer>
     );
   }

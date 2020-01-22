@@ -24,6 +24,13 @@ export default {
   ourWork: {
     title: vars.colors.red,
   },
+  contact: {
+    title: vars.colors.white,
+    inputBackground: vars.colors.lightGray,
+    labelColor: vars.colors.white,
+    buttonBackground: vars.colors.intenseRed,
+    buttonColor: vars.colors.white,
+  },
   footer: {
     background: vars.colors.black,
   },

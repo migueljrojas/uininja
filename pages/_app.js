@@ -23,6 +23,7 @@ const GlobalStyles = createGlobalStyle`
 Router.events.on('routeChangeStart', (url) => {
   console.log(`Loading: ${url}`);
 });
+
 Router.events.on('routeChangeComplete', url => console.log(`Loaded: ${url}`));
 
 class MyApp extends App {

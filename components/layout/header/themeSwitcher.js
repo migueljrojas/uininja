@@ -47,6 +47,7 @@ const Thumb = styled.span`
 
 const Icon = `
   fill: #999;
+  z-index: 9000;
 `;
 
 const StyledSunIcon = styled(SunIcon)`

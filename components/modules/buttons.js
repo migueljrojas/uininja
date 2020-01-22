@@ -4,6 +4,7 @@ import { getFromTheme } from 'utils/theme-manager';
 import valid from 'constants/validators';
 import styleModifierByProp from 'utils/styleModifier';
 import match from 'utils/match';
+import { useRouter } from 'next/router';
 
 const buttonOutline = css`
   background: transparent;
@@ -17,7 +18,7 @@ const buttonFilled = css`
   color: #fff;
 `;
 
-const StyledButton = styled.button`
+const buttonConfig = css`
   border-radius: 3px;
   box-shadow: ${getFromTheme('button.shadow')};
   height: ${props => getFromTheme(`buttonBase.size-${props.size}`)};
@@ -30,17 +31,6 @@ const StyledButton = styled.button`
   position: relative;
   overflow: hidden;
   transition: ${getFromTheme('transition')};
-
-  ${(props) => {
-    const { buttonType } = props;
-    const buttonStyles = (
-      match(buttonType)
-        .on(val => val === 'outline', () => buttonOutline)
-        .otherwise(() => buttonFilled)
-    );
-
-    return styleModifierByProp({ prop: 'buttonType', value: buttonType }, buttonStyles);
-  }}
 
   &:focus {
     outline: none;
@@ -77,22 +67,67 @@ const StyledButton = styled.button`
     pointer-events: none;
     filter: grayscale(100%);
   }
+
+  ${(props) => {
+    const { buttonType } = props;
+    const buttonStyles = (
+      match(buttonType)
+        .on(val => val === 'outline', () => buttonOutline)
+        .otherwise(() => buttonFilled)
+    );
+
+    return styleModifierByProp({ prop: 'buttonType', value: buttonType }, buttonStyles);
+  }}
 `;
 
+const StyledButton = styled.button`
+  ${buttonConfig}
+`;
+
+const StyledAnchor = styled.a`
+  ${buttonConfig}
+`;
+
+
 const Button = (props) => {
+  const router = useRouter();
+
+  const handleClick = (href) => {
+    console.log('working');
+
+    router.push(href);
+  };
+
   const {
     buttonType = 'filled',
     children,
     className,
     disabled,
     size = 'md',
+    callback = () => {},
+    href,
   } = props;
+
+  if (href && href !== '') {
+    return (
+      <StyledAnchor
+        buttonType={buttonType}
+        className={className}
+        disabled={disabled}
+        onClick={() => handleClick(href)}
+        size={size}
+      >
+        {children}
+      </StyledAnchor>
+    );
+  }
 
   return (
     <StyledButton
       buttonType={buttonType}
       className={className}
       disabled={disabled}
+      onClick={callback}
       size={size}
       type="button"
     >
@@ -107,6 +142,8 @@ Button.propTypes = {
   children: PropTypes.any,
   disabled: PropTypes.bool,
   size: PropTypes.oneOf(valid.sizes),
+  callback: PropTypes.any,
+  href: PropTypes.any,
 };
 
 export default Button;

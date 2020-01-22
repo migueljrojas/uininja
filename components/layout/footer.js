@@ -11,11 +11,14 @@ const Footer = styled.footer`
   font-size: 11px;
   font-weight: 500;
   text-transform: uppercase;
-  position: absolute;
-  bottom: 0;
   width: 100%;
   transition: ${getFromTheme('transition')};
   opacity: .3;
+
+  @media only screen and (min-width: 1200px) {
+    position: absolute;
+    bottom: 0;
+  }
 
   &:hover {
     opacity: 1;

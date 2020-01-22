@@ -19,6 +19,11 @@ const Tagline = styled.h1`
 
   span {
     color: ${getFromTheme('common.accentColor')};
+    display: block;
+
+    @media only screen and (min-width: 1200px) {
+      display: inline-block;
+    }
   }
 `;
 
@@ -97,7 +102,7 @@ class TaglineComponent extends React.Component {
 
     return (
       <Tagline className={className}>
-        {'We do web '}
+        We do web
         <span>
           {randomLine.join('')}
         </span>

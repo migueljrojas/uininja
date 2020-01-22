@@ -3,7 +3,7 @@ import vars from './variables';
 export default {
   themeId: 'light',
   common: {
-    mainBackground: vars.colors.lighestGray,
+    mainBackground: vars.colors.lightestGray,
     accentColor: vars.colors.red,
     link: vars.colors.darkestGray,
     linkHover: vars.colors.red,
@@ -23,6 +23,13 @@ export default {
   },
   ourWork: {
     title: vars.colors.red,
+  },
+  contact: {
+    title: vars.colors.black,
+    inputBackground: vars.colors.darkestGray,
+    labelColor: vars.colors.black,
+    buttonBackground: vars.colors.intenseRed,
+    buttonColor: vars.colors.white,
   },
   footer: {
     background: vars.colors.white,
