@@ -21,6 +21,10 @@ export default {
   home: {
     imageOpacity: '.05',
   },
+  about: {
+    bannerColor: vars.colors.black,
+    bannerColorActive: vars.colors.intenseRed,
+  },
   ourWork: {
     title: vars.colors.red,
   },

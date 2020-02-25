@@ -1,21 +1,21 @@
 import styled from 'styled-components';
-import { getFromTheme } from 'utils/theme-manager';
+// import { getFromTheme } from 'utils/theme-manager';
 import { UIContainer } from 'modules/grid';
 import { useRouter } from 'next/router';
 
-const SectionTitle = styled.h1`
-  color: ${getFromTheme('ourWork.title')};
-  font-size: 24px;
-  margin: 0;
-  margin-bottom: 40px;
-  
-  @media only screen and (min-width: 1200px) {
-    position: fixed;
-    top: 33px;
-    left: 20%;
-    margin: auto;
-  }
-`;
+// const SectionTitle = styled.h1`
+//   color: ${getFromTheme('ourWork.title')};
+//   font-size: 24px;
+//   margin: 0;
+//   margin-bottom: 40px;
+
+//   @media only screen and (min-width: 1200px) {
+//     position: fixed;
+//     top: 33px;
+//     left: 20%;
+//     margin: auto;
+//   }
+// `;
 
 const FiltersContainer = styled.div`
   display: flex;
@@ -187,6 +187,13 @@ const ourWork = () => {
       url: '/',
       id: '6',
     },
+    {
+      image: 'https://picsum.photos/id/230/200/300',
+      title: 'Project 7',
+      text: 'Lorem Ipsum Sit Dolor Ament Consectetur',
+      url: '/',
+      id: '7',
+    },
   ];
 
   const router = useRouter();
@@ -197,7 +204,7 @@ const ourWork = () => {
 
   return (
     <StyledUIContainer>
-      <SectionTitle>OUR WORK</SectionTitle>
+      {/* <SectionTitle>OUR WORK</SectionTitle> */}
       <OurWorkContainer>
         <ProjectsContainer>
           {data.map(project => (

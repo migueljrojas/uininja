@@ -100,17 +100,6 @@ const MenuComponent = ({ closeNav, path }) => (
       </Link>
     </MenuItem>
     <MenuItem
-      className={path === '/contact' ? '-active' : ''}
-      onClick={() => { closeNav(false); }}
-    >
-      <Link
-        as="/contact"
-        href="/contact"
-      >
-        <a>Contact Us</a>
-      </Link>
-    </MenuItem>
-    <MenuItem
       className={path === '/our-work' ? '-active' : ''}
       onClick={() => { closeNav(false); }}
     >
@@ -119,6 +108,17 @@ const MenuComponent = ({ closeNav, path }) => (
         href="/our-work"
       >
         <a>Our Work</a>
+      </Link>
+    </MenuItem>
+    <MenuItem
+      className={path === '/contact' ? '-active' : ''}
+      onClick={() => { closeNav(false); }}
+    >
+      <Link
+        as="/contact"
+        href="/contact"
+      >
+        <a>Contact Us</a>
       </Link>
     </MenuItem>
   </Menu>

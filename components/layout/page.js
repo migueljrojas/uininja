@@ -62,16 +62,15 @@ class UIPage extends React.Component {
 
 
   render() {
-    const { children } = this.props;
+    const { children, page } = this.props;
     const { theme } = this.state;
-
 
     return (
       <ThemeProvider theme={theme}>
         <Wrapper>
           <UIHead title="UI Ninja - Test Title" />
           <UIHeader
-            page={children.page}
+            page={page}
             switchTheme={this.switchTheme}
           />
           <Main>{children}</Main>

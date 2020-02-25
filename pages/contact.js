@@ -10,19 +10,19 @@ const StyledUIContainer = styled(UIContainer)`
   }
 `;
 
-const SectionTitle = styled.h1`
-  color: ${getFromTheme('ourWork.title')};
-  font-size: 24px;
-  margin: 0;
-  margin-bottom: 40px;
-  
-  @media only screen and (min-width: 1200px) {
-    position: fixed;
-    top: 33px;
-    left: 20%;
-    margin: auto;
-  }
-`;
+// const SectionTitle = styled.h1`
+//   color: ${getFromTheme('ourWork.title')};
+//   font-size: 24px;
+//   margin: 0;
+//   margin-bottom: 40px;
+
+//   @media only screen and (min-width: 1200px) {
+//     position: fixed;
+//     top: 33px;
+//     left: 20%;
+//     margin: auto;
+//   }
+// `;
 
 const ContactWrapper = styled.div`
   @media only screen and (min-width: 1200px) {
@@ -129,7 +129,6 @@ const FormSelect = styled.select`
   position: relative;
 
   &:focus {
-    color: transparent;
     margin-top: 8px;
   }
 
@@ -185,7 +184,7 @@ const FormButton = styled.button`
 
 const contact = () => (
   <StyledUIContainer>
-    <SectionTitle>Contact Us</SectionTitle>
+    {/* <SectionTitle>Contact Us</SectionTitle> */}
     <ContactWrapper>
       <ContactContainer>
         <ContainerTitle>
