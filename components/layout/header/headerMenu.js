@@ -7,26 +7,22 @@ const Menu = styled.ul`
   margin: 0;
   padding: 0;
   list-style: none;
-  display: flex;
-  flex-direction: column;
   justify-content: flex-start;
 
   @media only screen and (min-width: 1200px) {
-    margin-right: 20px;
-    flex-direction: row;
   }
 `;
 
 const MenuItem = styled.li`
   position: relative;
 
-  &:hover {
+  /* &:hover {
     a {
       &:after {
         width: 100%;
       }
     }
-  }
+  } */
 
   &.-active {
     a {
@@ -36,18 +32,11 @@ const MenuItem = styled.li`
     }
   }
 
-  &:not(first-child) {
-    @media only screen and (min-width: 1200px) {
-      margin-left: 20px;
-    }
-  }
-
-
   &:not(:last-child) {
     margin-bottom: 20px;
 
     @media only screen and (min-width: 1200px) {
-      margin-bottom: 0;
+      margin-bottom: 40px;
     }
 
   }
@@ -70,14 +59,13 @@ const MenuItem = styled.li`
       height: 2px;
       background: #E65443;
       width: 0;
-      left: 50%;
-      transform: translateX(-50%);
+      left: 0;
       z-index: 1000;
       transition: ${getFromTheme('transition')};
     }
 
     @media only screen and (min-width: 1200px) {
-      font-size: 14px;
+      font-size: 40px;
     }
 
     &:hover {
@@ -108,6 +96,17 @@ const MenuComponent = ({ closeNav, path }) => (
         href="/our-work"
       >
         <a>Our Work</a>
+      </Link>
+    </MenuItem>
+    <MenuItem
+      className={path === '/carrers' ? '-active' : ''}
+      onClick={() => { closeNav(false); }}
+    >
+      <Link
+        as="/carrers"
+        href="/carrers"
+      >
+        <a>Carrers</a>
       </Link>
     </MenuItem>
     <MenuItem

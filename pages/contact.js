@@ -1,12 +1,13 @@
 import styled from 'styled-components';
 import { getFromTheme } from 'utils/theme-manager';
 import { UIContainer } from 'modules/grid';
+import Button from 'modules/buttons';
 
 const StyledUIContainer = styled(UIContainer)`
   
   @media only screen and (min-width: 1200px) {
     min-height: calc(100vh - 100px);
-    padding-top: 50px;
+    padding-top: 120px;
   }
 `;
 
@@ -151,7 +152,7 @@ const FormTextarea = styled.textarea`
   z-index: 2;
   position: relative;
   outline: none;
-  margin-bottom: 10px;
+  /* margin-bottom: 10px; */
   resize: none;
 
   &::placeholder {
@@ -172,14 +173,14 @@ const FormTextarea = styled.textarea`
   }
 `;
 
-const FormButton = styled.button`
+const StyledButton = styled(Button)`
   width: 50%;
-  height: 50px;
-  background: ${getFromTheme('contact.buttonBackground')};
-  border: none;
-  color: ${getFromTheme('contact.buttonColor')};
   display: block;
   margin-left: auto;
+  /* height: 50px;
+  background: ${getFromTheme('contact.buttonBackground')};
+  color: ${getFromTheme('contact.buttonColor')};
+  border: none; */
 `;
 
 const contact = () => (
@@ -230,9 +231,7 @@ const contact = () => (
             <FormTextarea placeholder="Message" />
             <FormLabel>Message</FormLabel>
           </FormGroup>
-          <FormGroup>
-            <FormButton>Send</FormButton>
-          </FormGroup>
+          <StyledButton size="md">Send</StyledButton>
         </Form>
       </ContactContainer>
     </ContactWrapper>

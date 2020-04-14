@@ -30,6 +30,7 @@ const Track = styled.div`
   position: relative;
   border-radius: 99px;
   transition: ${getFromTheme('transition')};
+  z-index: 9000;
 `;
 
 const Thumb = styled.span`
@@ -43,6 +44,7 @@ const Thumb = styled.span`
   height: 20px;
   background: ${getFromTheme('themeSwitcher.thumbColor')};
   transition: ${getFromTheme('transition')};
+  z-index: 9000;
 `;
 
 const Icon = `

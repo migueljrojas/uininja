@@ -4,6 +4,7 @@ import { UIContainer } from 'modules/grid';
 import ImageOverlay from 'pageComponents/home/imageOverlay';
 import Tagline from 'pageComponents/home/tagline';
 import Button from 'modules/buttons';
+import Router from 'next/router';
 
 const StyledUIContainer = styled(UIContainer)`
   padding-top: 70px;
@@ -45,7 +46,7 @@ class Home extends React.Component {
         <ImageOverlay />
         <StyledTagline />
         <StyledCustomButton
-          href="/"
+          callback={() => Router.push('/new-project', '/start-new-project')}
           size="lg"
         >
           {'Let\'s start a project!'}

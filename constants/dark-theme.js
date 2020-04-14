@@ -8,6 +8,7 @@ export default {
     link: vars.colors.lightGray,
     linkHover: vars.colors.intenseRed,
     textColor: vars.colors.white,
+    headerEaseing: vars.easeing,
   },
   logo: {
     fillColor: vars.colors.white,
@@ -27,6 +28,7 @@ export default {
   },
   ourWork: {
     title: vars.colors.red,
+    filterColor: vars.colors.darkGray,
   },
   contact: {
     title: vars.colors.white,
@@ -34,6 +36,9 @@ export default {
     labelColor: vars.colors.white,
     buttonBackground: vars.colors.intenseRed,
     buttonColor: vars.colors.white,
+  },
+  project: {
+    heroBackground: vars.colors.darkGray,
   },
   footer: {
     background: vars.colors.black,

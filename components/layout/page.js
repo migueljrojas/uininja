@@ -20,7 +20,7 @@ const Wrapper = styled.div`
 
 const Main = styled.main`
   min-height: calc(100vh - 30px);
-  padding-top: 70px;
+  /* padding-top: 70px; */
 `;
 
 
